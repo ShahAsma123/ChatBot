@@ -193,18 +193,3 @@
         init: (options) => new ChatWidget(options)
     };
 })();
-// const ws = new WebSocket("wss://dev.techpay.ai/salesbot"); // Change to wss:// if needed
-
-// ws.onopen = () => console.log("✅ WebSocket Connected Successfully!");
-// ws.onerror = (error) => console.error("❌ WebSocket Error:", error);
-// ws.onmessage = (event) => console.log("📩 Received:", event.data);
-// ws.onclose = () => console.warn("⚠️ WebSocket Closed!");
-const ws = new WebSocket("wss://echo.websocket.events");
-
-ws.onopen = () => console.log("✅ Connected to Echo WebSocket!");
-ws.onmessage = (event) => console.log("📩 Received:", event.data);
-ws.onerror = (error) => console.error("❌ Error:", error);
-ws.onclose = () => console.warn("⚠️ Connection Closed!");
-
-// Send a test message after connection
-setTimeout(() => ws.send("Hello WebSocket!"), 2000);
